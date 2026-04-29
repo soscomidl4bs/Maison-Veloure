@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="welcome">
+
+<!-- BACKGROUND -->
+<div class="bg">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+</div>
+
+<!-- GLOW -->
+<div class="center-glow"></div>
+
+<!-- FOREGROUND -->
+<img class="croissant" src="asset/bread1-wel.png">
+<img class="coffee" src="asset/coffe-wel.png">
+<img class="dessert" src="asset/bread2-wel.png">
+
+<div class="note">Fait avec amour<br>depuis toujours</div>
+
+<!-- CONTENT -->
+<div class="frame">
+    <div class="logo">MV</div>
+    <div class="subtitle">Bienvenue chez</div>
+    <div class="title">MAISON VELOURE</div>
+    <div class="line"></div>
+
+    <div class="desc">
+        Chaque bouchée raconte une histoire,<br>
+        de passion, d’élégance et de gourmandise.
+    </div>
+
+    <a href="register.html" class="btn">
+        <span>COMMENCER →</span>
+    </a>
+</div>
+
+<!-- VIGNETTE -->
+<div class="vignette"></div>
+
+<script>
+window.onload = function(){
+    document.querySelectorAll(".frame, .croissant, .coffee, .dessert, .note")
+    .forEach(el => el.classList.add("show"));
+};
+
+document.addEventListener("mousemove", (e) => {
+    let x = (window.innerWidth / 2 - e.clientX) / 40;
+    let y = (window.innerHeight / 2 - e.clientY) / 40;
+
+    document.querySelector(".croissant").style.transform =
+        `translate(${x}px, ${y}px)`;
+
+    document.querySelector(".coffee").style.transform =
+        `translate(${x * -0.5}px, ${y * -0.5}px)`;
+
+    document.querySelector(".dessert").style.transform =
+        `translate(${x * 0.8}px, ${y * 0.8}px)`;
+}); 
+</script>
+
+</body>
+</html>
